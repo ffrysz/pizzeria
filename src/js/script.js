@@ -271,12 +271,13 @@
 
   class AmountWidget {
     constructor(element) {
-      console.log('Constructor arguments:', element);
+      //console.log('Constructor arguments:', element);
       const thisWidget = this;
       thisWidget.getElements(element);
       //thisWidget.element = element;
-      thisWidget.value = settings.amountWidget.defaultValue;
-      //thisWidget.value = element.querySelector;
+      //console.log('This widget input:', thisWidget.input.value);
+      //thisWidget.value = settings.amountWidget.defaultValue; /* W poprzednim module była ta komenda */
+      thisWidget.value = thisWidget.input.value;
       thisWidget.setValue(thisWidget.value);
       thisWidget.initActions();
 
@@ -399,18 +400,27 @@
       thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.remove);
     }
 
+
     initAmountWidget() {
       const thisCartProduct = this;
-      console.log(thisCartProduct.dom.amount.value);
+      //console.log(thisCartProduct.dom.amount.value);
+      thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidgetElem);
+      thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function () { thisCartProduct.processCartProduct(); });
+    }
+
+    /*
+    initAmountWidget() {
+      const thisCartProduct = this;
+      //console.log(thisCartProduct.dom.amount.value);
       thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function () { thisCartProduct.processCartProduct(); });
       thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidgetElem);
 
-    }
+    } */
 
     processCartProduct() {
       const thisCartProduct = this;
       console.log(thisCartProduct.dom.amount.value);
-      thisCartProduct.amount = thisCartProduct.dom.amount.value;
+      thisCartProduct.amount = thisCartProduct.amountWidget.value;
       thisCartProduct.price = thisCartProduct.amount * thisCartProduct.priceSingle;
       thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
       thisCartProduct.dom.amount.innerHTML = thisCartProduct.amount;
