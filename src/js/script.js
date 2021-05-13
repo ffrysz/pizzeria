@@ -77,6 +77,11 @@
     cart: {
       defaultDeliveryFee: 20,
     },
+    db: {
+      url: '//localhost:3131',
+      products: 'products',
+      orders: 'orders',
+    },
     // CODE ADDED END
   };
 
@@ -386,7 +391,7 @@
 
     update() {
       const thisCart = this;
-      const deliveryFee = settings.cart.defaultDeliveryFee;
+      let deliveryFee = settings.cart.defaultDeliveryFee;
       let totalNumber = 0;
       let subtotalPrice = 0;
       for (let product of thisCart.products) {
@@ -397,6 +402,7 @@
         thisCart.totalPrice = subtotalPrice + deliveryFee;
       } else {
         thisCart.totalPrice = 0;
+        deliveryFee = 0;
       }
 
       thisCart.dom.totalPrice.forEach(element => {
@@ -496,14 +502,31 @@
       const thisApp = this;
       console.log('thisApp.data:', thisApp.data);
       for (let productData in thisApp.data.products) {
-        new Product(productData, thisApp.data.products[productData]);
+        //new Product(productData, thisApp.data.products[productData]); /* Before AJAX */
+        //console.log('Product data:', productData);
+        new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
       }
     },
 
     //data: dataSource,
     initData: function () {
       const thisApp = this;
-      thisApp.data = dataSource;
+      thisApp.data = {};
+      const url = settings.db.url + '/' + settings.db.products;
+      console.log(url);
+      fetch(url)
+        .then(function (rawResponse) {
+          return rawResponse.json();
+        })
+        .then(function (parsedResponse) {
+          console.log('Parsed response:', parsedResponse);
+          /* Save parsedResponse as thisApp.data.products */
+          thisApp.data.products = parsedResponse;
+          /* Execute initMenu method */
+          thisApp.initMenu();
+        });
+
+      //console.log('thisApp.data:', JSON.stringify(thisApp.data));
     },
 
     initCart: function () {
@@ -521,7 +544,6 @@
       console.log('settings:', settings);
       console.log('templates:', templates);
       thisApp.initData();
-      thisApp.initMenu();
       thisApp.initCart();
 
     },
