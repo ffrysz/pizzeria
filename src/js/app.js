@@ -1,6 +1,7 @@
 import { settings, select, classNames, templates } from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
+import Booking from './components/Booking.js';
 
 const app = {
   initPages: function () {
@@ -48,6 +49,13 @@ const app = {
         link.getAttribute('href') == '#' + pageId
       );
     }
+  },
+
+  initBooking: function () {
+    const thisApp = this;
+
+    thisApp.booking = document.querySelector(select.containerOf.booking);
+    new Booking(thisApp.booking);
   },
 
   initMenu: function () {
@@ -104,6 +112,7 @@ const app = {
     thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
+    thisApp.initBooking();
 
   },
 };
