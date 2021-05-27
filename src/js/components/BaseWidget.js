@@ -3,13 +3,12 @@ import { select } from '../settings.js';
 class BaseWidget {
   constructor(wrapperElement, initialValue) {
     const thisWidget = this;
-
     thisWidget.dom = {};
     thisWidget.dom.wrapper = wrapperElement;
-    //thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
-    //console.log(thisWidget.dom.input);
-    //thisWidget.dom.input.value ? thisWidget.initialValue = thisWidget.dom.input.value : thisWidget.initialValue = initialValue;
+    thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
     thisWidget.correctValue = initialValue;
+    //thisWidget.setValue(thisWidget.dom.input.value || initialValue);
+    thisWidget.setValue(initialValue);
   }
 
   get value() {
