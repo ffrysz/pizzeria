@@ -3,11 +3,13 @@ import { select } from '../settings.js';
 class BaseWidget {
   constructor(wrapperElement, initialValue) {
     const thisWidget = this;
+    //console.log(wrapperElement);
     thisWidget.dom = {};
     thisWidget.dom.wrapper = wrapperElement;
-    thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
+    //thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
+    //console.log(thisWidget.dom.input);
     thisWidget.correctValue = initialValue;
-    //thisWidget.setValue(thisWidget.dom.input.value || initialValue);
+    //thisWidget.setValue(thisWidget.dom.input.value || initialValue); //z tym zapisem nie działa datepicker
     thisWidget.setValue(initialValue);
   }
 
