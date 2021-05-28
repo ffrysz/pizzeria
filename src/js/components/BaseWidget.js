@@ -1,4 +1,3 @@
-import { select } from '../settings.js';
 
 class BaseWidget {
   constructor(wrapperElement, initialValue) {

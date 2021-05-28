@@ -6,7 +6,7 @@ class AmountWidget extends BaseWidget {
     super(element, settings.amountWidget.defaultValue);
     //console.log('Constructor arguments:', element);
     const thisWidget = this;
-    thisWidget.getElements(element);
+    thisWidget.getElements();
     thisWidget.setValue(thisWidget.dom.input.value || settings.amountWidget.defaultValue);
     //thisWidget.value = settings.amountWidget.defaultValue; /* W poprzednim module była ta komenda */
     /*
@@ -26,7 +26,7 @@ class AmountWidget extends BaseWidget {
 
   }
 
-  getElements(element) {
+  getElements() {
     const thisWidget = this;
 
     //thisWidget.dom.wrapper = element; Ustawiany w klasie BaseWidget
