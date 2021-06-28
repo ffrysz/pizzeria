@@ -7,6 +7,7 @@ import { utils } from '../utils.js';
 class Booking {
   constructor(element) {
     const thisBooking = this;
+    //console.log(element);
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
@@ -88,7 +89,7 @@ class Booking {
       }
     }
 
-    console.log('booked:', thisBooking.booked);
+    //console.log('booked:', thisBooking.booked);
     thisBooking.updateDOM();
   }
 
@@ -261,7 +262,7 @@ class Booking {
       }).then(function (parsedResponse) {
         console.log('Parsed response booking:', parsedResponse);
         thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
-        console.log('Thisbooking.booked:', thisBooking.booked);
+        //console.log('Thisbooking.booked:', thisBooking.booked);
         thisBooking.updateDOM();
       });
   }

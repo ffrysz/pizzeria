@@ -11,6 +11,7 @@
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://unpkg.com/rangeslider-pure@0.4.11/dist/range-slider.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -24,6 +25,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -66,6 +68,9 @@
 
   <!--<div id="product-list" class="product-list container"></div>-->
   <div id="pages">
+    <section id="home">
+      <div id="home-page" class="container"></div>
+    </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -101,6 +106,106 @@
         <li><a href="#remove">Remove<i class="fas fa-trash-alt"></i></a></li>
       </ul>
     </li>
+  </script>
+
+  <script id="template-home-page" type="text/x-handlebars-template">
+    <section class="boxes">
+      <div class="box box-small box-order">
+        <a href="#order"><h2 class="box-title">Order online</h2></a>
+      </div>
+      <div class="box box-small box-book">
+        <h2 class="box-title">Book a table</h2>
+      </div>
+      <div class="box box-large">
+        <h2 class="box-title">Opening hours:</h2>
+        <h3 class="box-text">MON-SUN, 12PM-11PM</h3>
+      </div>
+    </section>
+    <section class="ratings">
+      <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "lazyLoad" : true}'>
+        <div class="carousel-cell cell">
+          <div class="cell-image">
+            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+          </div>
+          <div class="cell-text">
+            <h2 class="cell-title">Great Venue</h2>
+            <p class="cell-par">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+              Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+            </p>
+            <p class="reviewer">
+              -Rupert Cell
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell cell">
+          <div class="cell-image">
+            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+          </div>
+          <div class="cell-text">
+            <h2 class="cell-title">Great snacks</h2>
+            <p class="cell-par">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+              Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+            </p>
+            <p class="reviewer">
+              -Kevin Cell
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell cell">
+          <div class="cell-image">
+            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+          </div>
+          <div class="cell-text">
+            <h2 class="cell-title">Worth a visit</h2>
+            <p class="cell-par">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+              Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+            </p>
+            <p class="reviewer">
+              -David Bowie
+            </p>
+          </div>
+        </div>
+        <div class="carousel-cell cell">
+          <div class="cell-image">
+            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+          </div>
+          <div class="cell-text">
+            <h2 class="cell-title">Best service</h2>
+            <p class="cell-par">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+              Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+            </p>
+            <p class="reviewer">
+              -Rupert Novick
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="images">
+      <div class="image-box">
+        <img src="/images/home/pizza-5.jpg">
+        <div class="overlay">
+        <a href="#"><i class="fas fa-heart icon"></i></a>
+        <a href="#"><i class="fas fa-share-alt icon"></i></a>
+        </div>
+      </div>
+      <div class="image-box">
+        <img src="/images/home/pizza-6.jpg">
+      </div>
+      <div class="image-box">
+        <img src="/images/home/pizza-7.jpg">
+      </div>
+      <div class="image-box">
+        <img src="/images/home/pizza-8.jpg">
+      </div>
+      <div class="image-box">
+        <img src="/images/home/pizza-9.jpg">
+      </div>
+      <div class="image-box">
+        <img src="/images/home/pizza-4.jpg">
+      </div>
+    </section>
+    
   </script>
 
   <script id="template-menu-product" type="text/x-handlebars-template">
@@ -253,6 +358,7 @@
   <!--<script src="js/data.js"></script>-->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://unpkg.com/rangeslider-pure@0.4.11/dist/range-slider.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 

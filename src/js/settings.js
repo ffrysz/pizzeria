@@ -1,10 +1,12 @@
 export const select = {
   templateOf: {
+    homePage: '#template-home-page',
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product',
-    bookingWidget: '#template-booking-widget', // CODE ADDED
+    bookingWidget: '#template-booking-widget',
   },
   containerOf: {
+    home: '#home-page',
     menu: '#product-list',
     cart: '#cart',
     pages: '#pages',
@@ -25,7 +27,7 @@ export const select = {
   },
   widgets: {
     amount: {
-      input: 'input.amount', // CODE CHANGED
+      input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
@@ -54,7 +56,6 @@ export const select = {
   nav: {
     links: '.main-nav a',
   },
-  // CODE ADDED START
   cart: {
     productList: '.cart__order-summary',
     toggleTrigger: '.cart__summary',
@@ -74,7 +75,6 @@ export const select = {
     edit: '[href="#edit"]',
     remove: '[href="#remove"]',
   },
-  // CODE ADDED END
 };
 
 export const classNames = {
@@ -106,8 +106,7 @@ export const settings = {
     defaultValue: 1,
     defaultMin: 1,
     defaultMax: 9,
-  }, // CODE CHANGED
-  // CODE ADDED START
+  },
   cart: {
     defaultDeliveryFee: 20,
   },
@@ -132,13 +131,11 @@ export const settings = {
   booking: {
     tableIdAttribute: 'data-table',
   },
-  // CODE ADDED END
 };
 
 export const templates = {
+  homePage: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML),
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
-  // CODE ADDED START
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
-  // CODE ADDED END
   bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
 };

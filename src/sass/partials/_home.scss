@@ -1,0 +1,148 @@
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+    color: $color-light;
+  }
+}
+
+.box {
+  display: flex;
+  color: $color-light;
+  text-transform: uppercase;
+  text-align: center;
+  height: 150px;
+  background-color: black;
+  margin: 7px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-small {
+  flex: 2;
+  margin-top: 50px;
+}
+
+.box-large {
+  flex: 1 100%;
+  flex-wrap: wrap;
+  background-color: $color-main;
+
+  .box-title {
+    flex: 1 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h3.box-text {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+.box-order {
+  background-image: url("../../images/home/pizza-1.jpg");
+  background-size: cover;
+}
+
+.box-book {
+  background-image: url("../../images/home/pizza-2.jpg");
+  background-size: cover;
+}
+
+.flickity-button {
+  display: none;
+}
+
+.cell {
+  display: flex;
+  height: 250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .cell-image {
+    flex: 2;
+    //object-fit: cover;
+
+    .cell-img {
+      width: 100%;
+    }
+  }
+
+  .cell-text {
+    flex: 2;
+    color: $color-dark;
+
+    p, h2 {
+      padding-left: 15px;
+    }
+
+    .cell-par {
+      text-align: justify;
+      padding-right: 10px;
+    }
+
+    .reviewer {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+  .image-box {
+    display: flex;
+    flex: 30%;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .overlay {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: $color-dark;
+      border-radius: 10px;
+      position: absolute;
+      z-index: 2;
+      opacity: 0;
+      transition: 0.5s;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      font-size: 35px;
+      color: $color-light;
+      margin: auto;
+      opacity: 1;
+      padding: 5px;
+      transition: 1s;
+    }
+
+    .overlay:hover {
+      opacity: 0.9;
+
+      .icon {
+        color: $color-main;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@ class Cart {
     thisCart.getElements(element);
     thisCart.initActions();
 
-    console.log('New cart:', thisCart);
+    //console.log('New cart:', thisCart);
   }
 
   getElements(element) {
