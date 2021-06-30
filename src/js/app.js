@@ -56,7 +56,25 @@ const app = {
     const thisApp = this;
 
     thisApp.home = document.querySelector(select.containerOf.home);
-    new Home(thisApp.home);
+    thisApp.Home = new Home(thisApp.home);
+    /*console.log(thisApp.navLinks);
+    for (let link of thisApp.Home.dom.links) {
+      thisApp.navLinks.push(link);
+    };
+    console.log(thisApp.navLinks);*/
+
+    for (let link of thisApp.Home.dom.links) {
+      link.addEventListener('click', function (event) {
+        const clickedElement = this;
+        event.preventDefault();
+        /* Get page id from href */
+        const id = clickedElement.getAttribute('href').replace('#', '');
+        /* Run thisApp. activatePage with that id */
+        thisApp.activatePage(id);
+        /* Change URL hash */
+        window.location.hash = '#/' + id;
+      });
+    }
   },
 
   initBooking: function () {
@@ -122,8 +140,6 @@ const app = {
     thisApp.initData();
     thisApp.initCart();
     thisApp.initBooking();
-
-
   },
 };
 

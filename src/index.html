@@ -111,10 +111,16 @@
   <script id="template-home-page" type="text/x-handlebars-template">
     <section class="boxes">
       <div class="box box-small box-order">
-        <a href="#order"><h2 class="box-title">Order online</h2></a>
+        <a href="#order" class="box-link">
+          <h2 class="box-title">Order online</h2>
+          <p class="box-text-hidden">Delicious food delivered to your door</p>
+        </a>
       </div>
       <div class="box box-small box-book">
-        <h2 class="box-title">Book a table</h2>
+        <a href="#booking" class="box-link">
+          <h2 class="box-title">Book a table</h2>
+          <p class="box-text-hidden">Come and visit us!</p>
+        </a>
       </div>
       <div class="box box-large">
         <h2 class="box-title">Opening hours:</h2>
@@ -122,10 +128,10 @@
       </div>
     </section>
     <section class="ratings">
-      <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "lazyLoad" : true}'>
+      <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true }'>
         <div class="carousel-cell cell">
           <div class="cell-image">
-            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+            <img class="cell-img" src="/images/home/pizza-3.jpg">
           </div>
           <div class="cell-text">
             <h2 class="cell-title">Great Venue</h2>
@@ -139,7 +145,7 @@
         </div>
         <div class="carousel-cell cell">
           <div class="cell-image">
-            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+            <img class="cell-img" src="/images/home/pizza-3.jpg">
           </div>
           <div class="cell-text">
             <h2 class="cell-title">Great snacks</h2>
@@ -153,7 +159,7 @@
         </div>
         <div class="carousel-cell cell">
           <div class="cell-image">
-            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+            <img class="cell-img" src="/images/home/pizza-3.jpg">
           </div>
           <div class="cell-text">
             <h2 class="cell-title">Worth a visit</h2>
@@ -167,7 +173,7 @@
         </div>
         <div class="carousel-cell cell">
           <div class="cell-image">
-            <img class="cell-img" data-flickity-lazyload="/images/home/pizza-3.jpg">
+            <img class="cell-img" src="/images/home/pizza-3.jpg">
           </div>
           <div class="cell-text">
             <h2 class="cell-title">Best service</h2>
@@ -191,18 +197,38 @@
       </div>
       <div class="image-box">
         <img src="/images/home/pizza-6.jpg">
+        <div class="overlay">
+          <a href="#"><i class="fas fa-heart icon"></i></a>
+          <a href="#"><i class="fas fa-share-alt icon"></i></a>
+        </div>
       </div>
       <div class="image-box">
         <img src="/images/home/pizza-7.jpg">
+        <div class="overlay">
+          <a href="#"><i class="fas fa-heart icon"></i></a>
+          <a href="#"><i class="fas fa-share-alt icon"></i></a>
+        </div>
       </div>
       <div class="image-box">
         <img src="/images/home/pizza-8.jpg">
+        <div class="overlay">
+          <a href="#"><i class="fas fa-heart icon"></i></a>
+          <a href="#"><i class="fas fa-share-alt icon"></i></a>
+        </div>
       </div>
       <div class="image-box">
         <img src="/images/home/pizza-9.jpg">
+        <div class="overlay">
+          <a href="#"><i class="fas fa-heart icon"></i></a>
+          <a href="#"><i class="fas fa-share-alt icon"></i></a>
+        </div>
       </div>
       <div class="image-box">
         <img src="/images/home/pizza-4.jpg">
+        <div class="overlay">
+          <a href="#"><i class="fas fa-heart icon"></i></a>
+          <a href="#"><i class="fas fa-share-alt icon"></i></a>
+        </div>
       </div>
     </section>
     

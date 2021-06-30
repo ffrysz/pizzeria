@@ -11,7 +11,6 @@
 .box {
   display: flex;
   color: $color-light;
-  text-transform: uppercase;
   text-align: center;
   height: 150px;
   background-color: black;
@@ -19,11 +18,25 @@
   border-radius: 5px;
   align-items: center;
   justify-content: center;
+  align-content: center;
+}
+
+.box-title {
+  text-transform: uppercase;
 }
 
 .box-small {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   flex: 2;
   margin-top: 50px;
+
+  .box-title {
+    //display: flex;
+    flex: 1 100%;
+    margin: 10px auto;
+  }
 }
 
 .box-large {
@@ -43,9 +56,34 @@
   }
 }
 
+.box-text-hidden {
+  display: none;
+  margin: 0;
+  padding: 0;
+  transition: 1s;
+}
+
 .box-order {
   background-image: url("../../images/home/pizza-1.jpg");
   background-size: cover;
+}
+
+.box-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.box-link:hover {
+
+  .box-text-hidden{
+    display: block;
+  }
 }
 
 .box-book {
@@ -62,6 +100,7 @@
   height: 250px;
   margin-top: 50px;
   margin-bottom: 50px;
+  width: 100%;
 
   .cell-image {
     flex: 2;
@@ -128,7 +167,7 @@
     }
 
     .icon {
-      font-size: 35px;
+      font-size: 15px;
       color: $color-light;
       margin: auto;
       opacity: 1;
@@ -142,6 +181,7 @@
       .icon {
         color: $color-main;
         opacity: 1;
+        font-size: 35px;
       }
     }
   }
